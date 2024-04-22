@@ -1,28 +1,23 @@
 import React from 'react';
 import {Text, TextInput , View} from 'react-native';
 
-function Student(props) {
-  return (
-    <View>
-      <Text>
-        Hey, my name is {props.name}, I am a student in CIS340!
-      </Text>
-    </View>
-  );
-}
+export default function CatApp() {
 
-export default function MultiComp() {
-  return (
-    <View style={{
-      flex: 1,
-      justifyContent: "center" ,
-      alignItems: 'center'
-    }}>
-    <Text> Welcome to My Class </Text>
-    <Student name= "Maddy" />
-    <Student name= "Chloe"  />
-    <Student name= "Nia"  />
-    <Student name= "Abby Lee"  />
-    </View>
-  ) ;
-}
+  let pic = {
+    url:"https://raw.githubusercontent.com/AbdunabiRamadan/CIS340-Images/main/images/mydog.jpg" };
+    
+    return(
+      <View style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}>
+        <Image source={pic}
+        style={{width: 200, height: 200}}
+        />
+        <Text> Hello,  here is my dog! </Text>
+        </View>
+    );
+  }
+
+

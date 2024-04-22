@@ -1,28 +1,35 @@
-import React from 'react';
-import {Text, TextInput , View} from 'react-native';
+import React, {useState} from 'react';
+import {Text,  View, Button} from 'react-native';
 
-function Student(props) {
-  return (
+function TV(props){
+
+  const[isOff, setIsOff] = useState(true);
+
+  return(
     <View>
       <Text>
-        Hey, my name is {props.name}, I am a student in CIS340!
+        {'\n\n\n\n\n"}
+        This is {props.name} TV, and it is {isOff ? "Off" : "Turned On"}!
       </Text>
+      <Button
+         onPress={() => {
+          setIsOff(false);
+         }}
+         disabled={!isOff}
+         title={isOff ? "Turn me on, please!" : "Thank you!"}
+         />
     </View>
   );
 }
 
-export default function MultiComp() {
-  return (
-    <View style={{
-      flex: 1,
-      justifyContent: "center" ,
-      alignItems: 'center'
-    }}>
-    <Text> Welcome to My Class </Text>
-    <Student name= "Maddy" />
-    <Student name= "Chloe"  />
-    <Student name= "Nia"  />
-    <Student name= "Abby Lee"  />
+export default function MultiTVs(){
+  return(
+    <View>
+      <TV name = "LG"/>
+      <TV name = "Sony" />
     </View>
-  ) ;
+  );
 }
+
+
+

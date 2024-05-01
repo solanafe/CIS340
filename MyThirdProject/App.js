@@ -8,7 +8,7 @@ function TV(props){
   return(
     <View>
       <Text>
-        {'\n\n\n\n\n"}
+        {'\n\n\n\n\n'}
         This is {props.name} TV, and it is {isOff ? "Off" : "Turned On"}!
       </Text>
       <Button
